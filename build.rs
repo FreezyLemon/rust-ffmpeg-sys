@@ -1167,7 +1167,7 @@ fn main() {
         .blocklist_function("y1l")
         .blocklist_function("ynl")
         .opaque_type("__mingw_ldbl_type_t")
-        .rustified_enum("*")
+        .rustified_non_exhaustive_enum("*")
         .prepend_enum_name(false)
         .derive_eq(true)
         .size_t_is_usize(true)
