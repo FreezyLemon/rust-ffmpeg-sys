@@ -28,10 +28,13 @@ bindgen    = { version = "0.59", default-features = false, features = ["runtime"
 vcpkg = "0.2"
 
 [features]
-default  = ["avcodec", "avdevice", "avfilter", "avformat", "swresample", "swscale"]
+default  = ["avcodec", "avdevice", "avfilter", "avformat", "swresample", "swscale", "non-exhaustive-enums"]
 
 static = []
 build  = ["static"]
+
+# mark enums in generated bindings as #[non_exhaustive]
+non-exhaustive-enums = []
 
 # licensing
 build-license-gpl      = ["build"]
