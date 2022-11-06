@@ -199,6 +199,11 @@ fn build() -> io::Result<()> {
     let mut configure = Command::new(&configure_path);
     configure.current_dir(&source_dir);
 
+    if env::var("CARGO_FEATURE_BUILD_CLANG").is_ok() {
+        configure.arg("--cc=clang");
+        configure.arg("--ccx=clang++");
+    }
+
     configure.arg(format!("--prefix={}", search().to_string_lossy()));
 
     if env::var("TARGET").unwrap() != env::var("HOST").unwrap() {
