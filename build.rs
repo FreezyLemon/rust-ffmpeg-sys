@@ -201,7 +201,7 @@ fn build() -> io::Result<()> {
 
     if env::var("CARGO_FEATURE_BUILD_CLANG").is_ok() {
         configure.arg("--cc=clang");
-        configure.arg("--ccx=clang++");
+        configure.arg("--cxx=clang++");
     }
 
     configure.arg(format!("--prefix={}", search().to_string_lossy()));
